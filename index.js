@@ -46,7 +46,7 @@ function gameLogic() {
     // guessing to high
   } else if (guess !== secretNumber) {
     if (score > 1) {
-      let mess = guess > secretNumber ? "📈 To high!" : "📉 To low!";
+      let mess = guess > secretNumber ? "📈 Too high!" : "📉 Too low!";
       setMessage(mess);
       score--;
 
