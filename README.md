@@ -1,6 +1,6 @@
 # Guess-My-Number
 
-Live link to try the project: https://davidhct.github.io/Guess-My-Number/
+Live link to try the project:  https://davidhct.github.io/Guess-My-Number/
 
 ### Summary
 
