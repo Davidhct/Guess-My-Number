@@ -1,9 +1,19 @@
 let randNum = document.querySelector(".number");
 let htmlBody = document.querySelector("body");
 let guessInput = document.querySelector(".guess");
+const modal = document.querySelector(".modal");
+const GOModal = document.querySelector(".game-over-modal");
+const GOoverlay = document.querySelector(".overlay-over");
+const overlay = document.querySelector(".overlay");
 
 document.querySelector(".again").addEventListener("click", resetGame);
 document.querySelector(".check").addEventListener("click", gameLogic);
+document.querySelector("#close-modal").addEventListener("click", closeModal);
+document
+  .querySelector("#game-over-close-modal")
+  .addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+GOoverlay.addEventListener("click", closeModal);
 
 window.addEventListener("keydown", function (event) {
   if (event.which === 13) {
@@ -11,6 +21,29 @@ window.addEventListener("keydown", function (event) {
     document.querySelector(".check").click();
   }
 });
+
+const winModal = function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+const gameOverModal = function () {
+  GOModal.classList.remove("hidden-over");
+  GOoverlay.classList.remove("hidden-over");
+};
+
+function closeModal(event) {
+  if (
+    event.target.id === "game-over-close-modal" ||
+    event.target.classList.contains("overlay-over")
+  ) {
+    GOModal.classList.add("hidden-over");
+    GOoverlay.classList.add("hidden-over");
+  } else {
+    modal.classList.add("hidden");
+    overlay.classList.add("hidden");
+  }
+  resetGame();
+}
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
@@ -32,7 +65,7 @@ function gameLogic() {
 
     // player wins
   } else if (guess === secretNumber) {
-    setMessage("🎯 You win!!!");
+    winModal();
     randNum.textContent = secretNumber;
 
     htmlBody.style.backgroundColor = "rgb(96, 179, 71)";
@@ -52,7 +85,7 @@ function gameLogic() {
 
       setScore(score);
     } else {
-      setMessage("😵 Game Over!");
+      gameOverModal();
       setScore(0);
     }
   }
