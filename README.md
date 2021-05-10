@@ -1,6 +1,6 @@
 # Guess-My-Number
 
-Live link to try the project:  https://davidhct.github.io/Guess-My-Number/
+Live link to try the project: https://davidhct.github.io/Guess-My-Number/
 
 ### Summary
 
@@ -12,9 +12,12 @@ Plus if the user has not guessed well in all 20 guesses he has then he has lost.
 #### The purpose of this project is:
 
 - To practicethe Javascript programming language, HTML5 and CSS3.
+- To practice Modal.
 
-#### The application is only suitable for a computer screen. 
+#### The application is only suitable for a computer screen.
 
 <kbd><img src="/demo images/img_1.png" width="630" height="350"></kbd>
 <kbd><img src="/demo images/img_2.png" width="630" height="350"></kbd>
 <kbd><img src="/demo images/img_3.png" width="630" height="350"></kbd>
+<kbd><img src="/demo images/img_4.png" width="630" height="350"></kbd>
+<kbd><img src="/demo images/img_5.png" width="630" height="350"></kbd>
